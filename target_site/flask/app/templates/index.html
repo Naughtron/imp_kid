@@ -1,15 +1,8 @@
-<html>
-  <head>
-    {% if title %}
-    <title>{{ title }} - TARGET_SITE</title>
-    {% else %}
-    <title>Welcome to the Target Site!</title>
-    {% endif %}
-  </head>
-  <body>
-      <h1>Hello, {{ user.nickname }}!</h1>
-      {%for posts in posts%}
-      <div><p>{{posts.author.nickname}} says: <b>{{posts.body}}</b></p></div>
-      {%endfor%}
-  </body>
-</html>
+<!-- update to inherit from base.html-->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Hi, {{ user.nickname }}!</h1>
+  {% for posts in posts %}
+  <div>{{ posts.author.nickname }} says: <b>{{ posts.body }}</b></p></div>
+  {% endfor %}
+{% endblock %}

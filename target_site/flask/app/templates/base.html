@@ -1,0 +1,15 @@
+<!--This is where other templates will inheret from-->
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - target site</title>
+    {% else %}
+    <title>Welcome to the target site!</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Target Site: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
